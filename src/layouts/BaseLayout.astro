@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 import "../styles/global.css";
 const name = "Guian Mark Dumagat"
 const position = "Backend Developer"
@@ -14,6 +16,8 @@ const position = "Backend Developer"
 		<title>{name} | {position}</title>
 	</head>
 	<body>
+        <Header />
 		<slot />
+        <Footer />
 	</body>
 </html>

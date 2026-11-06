@@ -1,10 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const name = "Guian Mark Dumagat"
-const position = "Backend Developer"
+import About from "../sections/About.astro";
+import Contact from "../sections/Contact.astro";
+import Hero from "../sections/Hero.astro";
+import Project from "../sections/Project.astro";
 ---
 
-<BaseLayout>	
-    <h1 class="text-red-700">{name}</h1>
-	<p>{position}</p>
+<BaseLayout>
+  <Hero />
+  <About />
+  <Project />
+  <Contact />
 </BaseLayout>
