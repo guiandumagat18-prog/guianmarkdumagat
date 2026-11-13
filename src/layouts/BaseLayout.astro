@@ -38,5 +38,10 @@ const { title = "Guian | My Projects" } = Astro.props;
     <script>
       import "../scripts/animations.js";
     </script>
+	<script>
+            import { FallingLeaves } from "falling-leaves";
+
+            new FallingLeaves({ shapes: ["maple", "oak", "ginkgo", "birch", "oval"] });
+        </script>
   </body>
 </html>
