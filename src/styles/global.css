@@ -1,3 +1,131 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --cream: #f5f1e8;
+  --forest: #17251d;
+  --sage: #a7d6a5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.site-shell {
+  background: var(--cream);
+  color: var(--forest);
+}
+
+.dark .site-shell {
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(15px);
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.primary-button {
+  background: var(--sage);
+  color: var(--forest);
+  padding: 12px 24px;
+  font-weight: 700;
+}
+
+.primary-button:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+.secondary-button {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  padding: 12px 24px;
+  font-weight: 600;
+}
+
+.secondary-button:hover {
+  background: rgba(128, 128, 128, 0.15);
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 90px 24px;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.section-description {
+  color: #a8a29e;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-top: 16px;
+}
+
+.project-card {
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.progress-track {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 4px;
+  z-index: 100;
+}
+
+#scrollProgress {
+  width: 0;
+  height: 100%;
+  background: var(--sage);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
